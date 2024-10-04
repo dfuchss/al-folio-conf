@@ -1,0 +1,36 @@
+---
+layout: default
+---
+{% if page._styles %}
+  <!-- Page/Post style -->
+  <style type="text/css">
+    {{ page._styles }}
+  </style>
+{% endif %}
+
+<div class="post">
+  <article>
+    {% if page.venue %}
+      <h2 align="center">{{page.venue}}</h2>
+    {% endif %}
+    {% if page.logo %}
+      <!-- Image Centered -->
+      <p align="center">
+        <img src="{{page.logo}}" alt="SE2025" width="100%"/>
+        {{page.logo_copy}}
+      </p>
+    {% endif %}
+    {% if page.important_dates %}
+    <div class="alert alert-warning" role="alert">
+      <h4 class="alert-heading">Wichtige Daten</h4>
+          <ul>
+              {% for date in page.important_dates %}
+              <li>{{date}}</li>
+              {% endfor %}
+          </ul>
+      </div>
+    {% endif %}
+
+    {{ content }}
+  </article>
+</div>
