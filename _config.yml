@@ -29,7 +29,7 @@ search_enabled: false
 # Dimensions
 max_width: 930px
 
-logo: "/assets/img/logo.jpg" # the logo in the navbar
+logo: "assets/img/logo.jpg" # the logo in the navbar
 # Width of the logo in the navbar (in pixels or percentage)
 logo_width: 70%
 
