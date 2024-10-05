@@ -22,12 +22,16 @@ layout: default
     {% endif %}
     {% if page.important_dates %}
     <div class="alert alert-warning" role="alert">
-      <h4 class="alert-heading">Wichtige Daten</h4>
-          <ul>
-              {% for date in page.important_dates %}
-              <li>{{date}}</li>
-              {% endfor %}
-          </ul>
+      {% if site.lang == 'de' %}
+        <h4 class="alert-heading">Wichtige Daten</h4>
+      {% else %}
+        <h4 class="alert-heading">Important Dates</h4>
+      {% endif %}
+      <ul>
+          {% for date in page.important_dates %}
+          <li>{{date}}</li>
+          {% endfor %}
+      </ul>
       </div>
     {% endif %}
 
