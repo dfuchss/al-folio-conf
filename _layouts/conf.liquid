@@ -16,7 +16,7 @@ layout: default
     {% if page.logo %}
       <!-- Image Centered -->
       <p align="center">
-        <img src="{{site.baseurl}}{{page.logo}}" alt="SE2025" width="100%">
+        <img src="{{page.logo | relative_url}}" alt="SE2025" width="100%">
         {{ page.logo_copy }}
       </p>
     {% endif %}
