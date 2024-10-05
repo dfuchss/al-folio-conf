@@ -12,7 +12,9 @@ $(document).ready(function () {
       $(this).parents('[class*="news"]').length == 0 &&
       $(this).parents('[class*="card"]').length == 0 &&
       $(this).parents('[class*="archive"]').length == 0 &&
-      $(this).parents("code").length == 0
+      $(this).parents("code").length == 0 &&
+      // Disable also if "no-bootstrap" style is set
+      $(this).attr("style") != "no-bootstrap"
     ) {
       // make table use bootstrap-table
       $(this).attr("data-toggle", "table");
