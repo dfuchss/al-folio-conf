@@ -25,9 +25,9 @@ The project is structured as follows, focusing on the main components that you w
 
 ## Configuration
 
-The configuration file [\_config.yml](_config.yml) contains the main configuration of the website. Most of the settings is self-explanatory and we also tried to add as much comments as possible. If you have any questions, please check if it was not already answered in the [FAQ](FAQ.md).
+The configuration file [\_config.yml](_config.yml) contains the main configuration of the website. Most of the settings is self-explanatory and we also tried to add as much comments as possible. If you have any questions, please check if it was not already answered in the [FAQ](https://github.com/alshedivat/al-folio/blob/master/FAQ.md).
 
-> Note that the `url` and `baseurl` settings are used to generate the links of the website, as explained in the [install instructions](INSTALL.md).
+> Note that the `url` and `baseurl` settings are used to generate the links of the website, as explained in the [install instructions](https://github.com/alshedivat/al-folio/blob/master/INSTALL.md).
 
 All changes made to this file are only visible after you rebuild the website. That means that you need to run `bundle exec jekyll serve` again if you are running the website locally or push your changes to GitHub if you are using GitHub Pages. All other changes are visible immediately, you only need to refresh the page.
 

@@ -23,11 +23,13 @@ For customization details please refer to [CUSTOMIZE.md](CUSTOMIZE.md).
 ## Features
 
 ### Important Dates
+
 You can add important dates to the front page (layout: `conf`) and to pages of layout `call`:
 
 ![Example](.github/img/example.png)
 
 ### Organization Team
+
 You can add a page with the organizational team (layout: `orga`):
 
 ![Organization](.github/img/organization.png)
