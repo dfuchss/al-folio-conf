@@ -25,21 +25,23 @@ layout: default
         <h2>{{ team.title }}</h2>
 
         <div class="team-row" style="display: flex; flex-wrap: wrap;">
-
           {% for member in team.members %}
             <div class="team-member" style="flex: 1 1 calc(100% / {{ columns }} - 20px);">
               <a href="{% if member.url %}{{ member.url | relative_url }}{% endif %}">
                 <p>
                   {% if member.image %}
-                    {% include figure.liquid 
-                      path=member.image 
-                      loading="eager" 
-                      alt=member.name 
-                      width="250px" %}
+                    {%
+                      include figure.liquid
+                      path=member.image
+                      loading="eager"
+                      alt=member.name
+                      width="250px"
+                    %}
                   {% endif %}
                 </p>
                 <p>
-                  {{ member.name }}<br>
+                  {{ member.name -}}
+                  <br>
                   {{ member.affiliation }}
                 </p>
               </a>

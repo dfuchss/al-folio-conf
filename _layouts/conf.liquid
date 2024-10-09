@@ -16,11 +16,13 @@ layout: default
     {% if page.logo %}
       <!-- Image Centered -->
       <div align="center">
-        {% include figure.liquid 
-          path=page.logo 
-          loading="eager" 
-          alt="Conference Logo" 
-          width="100%" %}
+        {%
+          include figure.liquid
+          path=page.logo
+          loading="eager"
+          alt="Conference Logo"
+          width="100%"
+        %}
         <p>{{ page.logo_copy }}</p>
       </div>
     {% endif %}
