@@ -2,7 +2,6 @@
 layout: default
 ---
 {% if page._styles %}
-  <!-- Page/Post style -->
   <style type="text/css">
     {{ page._styles }}
   </style>
@@ -17,146 +16,36 @@ layout: default
   {% endif %}
 
   <article>
-    {% assign image_size = 250 %}
     {% if page.team %}
       {% for team in page.team %}
         {% if forloop.index0 != 0 %}
           <hr>
         {% endif %}
-        {% assign team_size = team.members | size %}
-
+        {% assign columns = team.columns | default: 2 %}
         <h2>{{ team.title }}</h2>
-        {% if team_size == 1 %}
-          <p>
-            {% if team.members[0].image %}
-              <img src="{{team.members[0].image | relative_url}}" alt="{{team.members[0].name}}" width="{{ image_size }}">
-            {% endif %}
-          </p>
-          <p>
-            {% if team.members[0].url %}
-              <a href="{{team.members[0].url}}">{{ team.members[0].name }}</a>
-            {% else %}
-              {{ team.members[0].name }}
-            {% endif %}
-            <br>
-            {{ team.members[0].affiliation }}
-          </p>
-        {% elsif team_size == 2 %}
-          <table style="no-bootstrap">
-            <tbody>
-              <tr>
-                <td>
-                  <p>
-                    {% if team.members[0].image %}
-                      <img src="{{team.members[0].image | relative_url}}" alt="{{team.members[0].name}}" width="{{ image_size }}">
-                    {% endif %}
-                  </p>
-                </td>
-                <td>
-                  <p>
-                    {% if team.members[1].image %}
-                      <img src="{{team.members[1].image | relative_url}}" alt="{{team.members[1].name}}" width="{{ image_size }}">
-                    {% endif %}
-                  </p>
-                </td>
-              </tr>
-              <tr>
-                <td>
-                  {% if team.members[0].url %}
-                    <a href="{{team.members[0].url}}">{{ team.members[0].name }}</a>
-                  {% else %}
-                    {{ team.members[0].name }}
-                  {% endif %}
-                </td>
-                <td>
-                  {% if team.members[1].url %}
-                    <a href="{{team.members[1].url}}">{{ team.members[1].name }}</a>
-                  {% else %}
-                    {{ team.members[1].name }}
-                  {% endif %}
-                </td>
-              </tr>
-              <tr>
-                <td>{{ team.members[0].affiliation }}</td>
-                <td>{{ team.members[1].affiliation }}</td>
-              </tr>
-            </tbody>
-          </table>
-        {% elsif team_size == 3 %}
-          <table style="no-bootstrap">
-            <tbody>
-              <tr>
-                <td>
-                  <p>
-                    {% if team.members[0].image %}
-                      <img src="{{team.members[0].image | relative_url}}" alt="{{team.members[0].name}}" width="{{ image_size }}">
-                    {% endif %}
-                  </p>
-                </td>
-                <td>
-                  <p>
-                    {% if team.members[1].image %}
-                      <img src="{{team.members[1].image | relative_url}}" alt="{{team.members[1].name}}" width="{{ image_size }}">
-                    {% endif %}
-                  </p>
-                </td>
-                <td>
-                  <p>
-                    {% if team.members[2].image %}
-                      <img src="{{team.members[2].image | relative_url}}" alt="{{team.members[2].name}}" width="{{ image_size }}">
-                    {% endif %}
-                  </p>
-                </td>
-              </tr>
-              <tr>
-                <td>
-                  {% if team.members[0].url %}
-                    <a href="{{team.members[0].url | relative_url}}">{{ team.members[0].name }}</a>
-                  {% else %}
-                    {{ team.members[0].name }}
-                  {% endif %}
-                </td>
-                <td>
-                  {% if team.members[1].url %}
-                    <a href="{{team.members[1].url}}">{{ team.members[1].name }}</a>
-                  {% else %}
-                    {{ team.members[1].name }}
-                  {% endif %}
-                </td>
-                <td>
-                  {% if team.members[2].url %}
-                    <a href="{{team.members[2].url}}">{{ team.members[2].name }}</a>
-                  {% else %}
-                    {{ team.members[2].name }}
-                  {% endif %}
-                </td>
-              </tr>
-              <tr>
-                <td>{{ team.members[0].affiliation }}</td>
-                <td>{{ team.members[1].affiliation }}</td>
-                <td>{{ team.members[2].affiliation }}</td>
-              </tr>
-            </tbody>
-          </table>
-        {% else %}
-          <!-- More than 3 members: Currently Only a fallback -->
+
+        <div class="team-row" style="display: flex; flex-wrap: wrap;">
+
           {% for member in team.members %}
-            <p>
-              {% if member.image %}
-                <img src="{{member.image | relative_url}}" alt="{{member.name}}" width="{{ image_size }}">
-              {% endif %}
-            </p>
-            <p>
-              {% if member.url %}
-                <a href="{{member.url}}">{{ member.name }}</a>
-              {% else %}
-                {{ member.name }}
-              {% endif %}
-              <br>
-              {{ member.affiliation }}
-            </p>
+            <div class="team-member" style="flex: 1 1 calc(100% / {{ columns }} - 20px);">
+              <a href="{% if member.url %}{{ member.url | relative_url }}{% endif %}">
+                <p>
+                  {% if member.image %}
+                    {% include figure.liquid 
+                      path=member.image 
+                      loading="eager" 
+                      alt=member.name 
+                      width="250px" %}
+                  {% endif %}
+                </p>
+                <p>
+                  {{ member.name }}<br>
+                  {{ member.affiliation }}
+                </p>
+              </a>
+            </div>
           {% endfor %}
-        {% endif %}
+        </div>
       {% endfor %}
     {% endif %}
     {{ content }}

@@ -23,6 +23,7 @@ team:
         url:
         affiliation: al-folio-conf
   - title: My Final Chair Team
+    columns: 3
     members:
       - name: My Final-Chair
         image: assets/img/1920px-Karlsruhe_asv2022-10_img07_Schloss_Karlsruhe.jpg
