@@ -15,10 +15,14 @@ layout: default
     {% endif %}
     {% if page.logo %}
       <!-- Image Centered -->
-      <p align="center">
-        <img src="{{page.logo | relative_url}}" alt="Conference Logo" width="100%">
-        {{ page.logo_copy }}
-      </p>
+      <div align="center">
+        {% include figure.liquid 
+          path=page.logo 
+          loading="eager" 
+          alt="Conference Logo" 
+          width="100%" %}
+        <p>{{ page.logo_copy }}</p>
+      </div>
     {% endif %}
     {% if page.important_dates %}
       <div class="alert alert-warning" role="alert">
