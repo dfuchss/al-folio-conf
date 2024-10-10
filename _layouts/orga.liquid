@@ -22,7 +22,7 @@ layout: default
           <hr>
         {% endif %}
         {% assign columns = team.columns | default: 2 %}
-        <h2>{{ team.title }}</h2>
+        <h2 id="{{ team.title | slugify }}">{{ team.title }}</h2>
 
         <div class="team-row" style="display: flex; flex-wrap: wrap;">
           {% for member in team.members %}
