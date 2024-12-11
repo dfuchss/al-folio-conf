@@ -11,19 +11,25 @@ layout: default
 <div class="post">
   <article>
     {% if page.venue %}
-      <h2 align="center">{{ page.venue }}</h2>
+      <h2 class="text-center">{{ page.venue }}</h2>
     {% endif %}
-    {% if page.logo %}
+    {% if page.confdate %}
+      <p class="lead text-center">{{ page.confdate }}</p>
+    {% endif %}
+    {% if page.frontimage %}
       <!-- Image Centered -->
-      <div align="center">
+      <div class="text-center">
         {%
           include figure.liquid
-          path=page.logo
-          loading="eager"
-          alt="Conference Logo"
+          path=page.frontimage
+          alt=page.frontimage_alt
           width="100%"
         %}
-        <p>{{ page.logo_copy }}</p>
+        <p class="text-right">
+          <small>
+            <a href="{{page.frontimage_copy_link}}">{{ page.frontimage_copy }}</a>
+          </small>
+        </p>
       </div>
     {% endif %}
     {% if page.important_dates %}
