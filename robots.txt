@@ -1,4 +1,1 @@
-User-agent: *
-Disallow:
-
-Sitemap: https://dfuchss.github.io/al-folio-conf/sitemap.xml
+User-agent: * Disallow: Sitemap: https://dfuchss.github.io/al-folio-conf/sitemap.xml
