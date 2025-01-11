@@ -18,6 +18,7 @@ group :jekyll_plugins do
     gem 'jekyll-toc'
     gem 'jekyll-twitter-plugin'
     gem 'jemoji'
+    gem 'terser'
     gem 'unicode_utils'
     gem 'webrick'
 end
@@ -25,4 +26,6 @@ group :other_plugins do
     gem 'css_parser'
     gem 'feedjira'
     gem 'httparty'
+    gem 'observer' # used by jekyll-scholar
+    gem 'ostruct' # used by jekyll-twitter-plugin
 end
