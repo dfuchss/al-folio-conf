@@ -1,3 +1,5 @@
+Archived, since not needed for conferences I'm involved anymore.
+
 # al-folio-conf
 
 <div align="center">
