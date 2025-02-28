@@ -9,12 +9,12 @@ ninja.data = [{
     handler: () => {
       window.location.href = "/al-folio-conf/";
     },
-  },{id: "dropdown-most-important-calls",
-              title: "Most Important Calls",
+  },{id: "dropdown-important-calls",
+              title: "Important Calls",
               description: "",
               section: "Dropdown",
               handler: () => {
-                window.location.href = "";
+                window.location.href = "/al-folio-conf/important-calls/";
               },
             },{id: "nav-keynotes",
           title: "Keynotes",
