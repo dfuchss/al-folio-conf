@@ -5,6 +5,6 @@ nav: true
 nav_order: 0
 dropdown: true
 children:
-  - title: Most Important Calls
+  - title: Important Calls
     permalink: /important-calls/
 ---
